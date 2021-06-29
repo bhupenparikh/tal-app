@@ -1,0 +1,51 @@
+
+<h1 id="tableLabel">calculate-premium</h1>
+
+<p>This component demonstrates calculate-premium.</p>
+
+
+<form [formGroup]="premiumForm" (ngSubmit)="onSubmit()">
+
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" formControlName="name"
+           required>
+  </div>
+
+  <div class="form-group">
+    <label for="age">Age</label>
+    <input [formGroup]="premiumForm" type="text" class="form-control"
+           formControlName="age">
+  </div>
+  <div class="form-group">
+    <label for="dob">DOB</label>
+    <input [formGroup]="premiumForm" type="date" class="form-control" formControlName="dob">
+  </div>
+  <div class="form-group">
+    <label for="occupation">Occupation</label>
+    <select [formGroup]="premiumForm" class="form-control" id="power" required
+            formControlName="occupation">
+
+      <option value="Light Manual">Cleaner</option>
+      <option value="Professional">Doctor</option>
+      <option value="White Collar">Author</option>
+      <option value="Heavy Manual">Farmer</option>
+      <option value="Heavy Manual">Mechanic</option>
+      <option value="Light Manual">Florist</option>
+
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="deathsum">Death Sum</label>
+    <input [formGroup]="premiumForm" type="text" class="form-control"
+           formControlName="deathsum">
+  </div>
+  <div class="form-group">
+    <label for="premium">Total Premium : </label>{{premium}}
+   
+  </div>
+
+
+
+  <button class="button" type="submit">Purchase</button>
+</form>
