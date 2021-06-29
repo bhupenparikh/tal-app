@@ -27,7 +27,6 @@ export class CalculatePremiumComponent implements OnInit {
   constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string, public _fb: FormBuilder) {
 
     this.baseUrl = baseUrl;
-    //this.http = http;
     
    
   }

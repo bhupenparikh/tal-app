@@ -20,31 +20,9 @@ namespace tal_app.Controllers
         }
        
         [HttpGet]
-        public double Get([FromBody]CalculatePremium calculatePremium)
+        public void Get([FromBody]CalculatePremium calculatePremium)
         {
-            double Rating = -1;
-            switch(calculatePremium.Occupation)
-            {
-                case "Professional":
-                    Rating = 1.0;
-                    break;
-                case "White Collar":
-                    Rating = 1.25;
-                    break;
-                case "Light Manual":
-                    Rating = 1.50;
-                    break;
-                case "Heavy Manual":
-                    Rating = 1.75;
-                    break;
-
-            }
             
-
-
-            var result = calculatePremium.DeathSum * Rating * calculatePremium.Age / (1000 * 2);
-
-            return result;
         }
 
         [HttpPost]
