@@ -14,16 +14,16 @@
 
   <div class="form-group">
     <label for="age">Age</label>
-    <input [formGroup]="premiumForm" type="text" class="form-control"
+    <input [formGroup]="premiumForm" type="number"  class="form-control"
            formControlName="age">
   </div>
   <div class="form-group">
     <label for="dob">DOB</label>
-    <input [formGroup]="premiumForm" type="date" class="form-control" formControlName="dob">
+    <input [formGroup]="premiumForm" type="date"  class="form-control" formControlName="dob">
   </div>
   <div class="form-group">
     <label for="occupation">Occupation</label>
-    <select [formGroup]="premiumForm" class="form-control" id="power" required
+    <select [formGroup]="premiumForm" (change)="onSubmit()" class="form-control" id="power" required
             formControlName="occupation">
 
       <option value="Light Manual">Cleaner</option>
@@ -37,7 +37,7 @@
   </div>
   <div class="form-group">
     <label for="deathsum">Death Sum</label>
-    <input [formGroup]="premiumForm" type="text" class="form-control"
+    <input [formGroup]="premiumForm" type="number" class="form-control"
            formControlName="deathsum">
   </div>
   <div class="form-group">

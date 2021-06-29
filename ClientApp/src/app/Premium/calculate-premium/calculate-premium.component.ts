@@ -21,7 +21,7 @@ export class CalculatePremiumComponent implements OnInit {
   public premiumForm: FormGroup;
 
   public data: calculatePremium;
-
+  maxDate: Date;
 
 
   constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string, public _fb: FormBuilder) {
@@ -43,6 +43,7 @@ export class CalculatePremiumComponent implements OnInit {
       deathsum: ['', [Validators.required]]
 
     })
+ 
   }
   
   onSubmit() {
