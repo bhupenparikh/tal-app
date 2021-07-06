@@ -14,6 +14,10 @@ namespace tal_app.Controllers
 
         private readonly ILogger<PremiumController> _logger;
 
+        public PremiumController()
+        {
+        }
+
         public PremiumController(ILogger<PremiumController> logger)
         {
             _logger = logger;
