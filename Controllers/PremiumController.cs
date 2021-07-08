@@ -14,19 +14,38 @@ namespace tal_app.Controllers
 
         private readonly ILogger<PremiumController> _logger;
 
+       
         public PremiumController()
         {
+           
         }
-
-        public PremiumController(ILogger<PremiumController> logger)
-        {
-            _logger = logger;
-        }
-       
+        [Route("get")]
         [HttpGet]
-        public void Get([FromBody]CalculatePremium calculatePremium)
+        public double GetPremium([FromBody]CalculatePremium calculatePremium)
         {
-            
+            double Rating = -1;
+            switch (calculatePremium.Occupation)
+            {
+                case "Professional":
+                    Rating = 1.0;
+                    break;
+                case "White Collar":
+                    Rating = 1.25;
+                    break;
+                case "Light Manual":
+                    Rating = 1.50;
+                    break;
+                case "Heavy Manual":
+                    Rating = 1.75;
+                    break;
+
+            }
+
+
+
+            var result = calculatePremium.DeathSum * Rating * calculatePremium.Age / (1000 * 2);
+
+            return result;
         }
 
         [HttpPost]

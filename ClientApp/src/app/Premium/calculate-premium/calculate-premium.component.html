@@ -1,7 +1,6 @@
 
-<h1 id="tableLabel">calculate-premium</h1>
+<h1 id="tableLabel">Premium Quotes </h1>
 
-<p>This component demonstrates calculate-premium.</p>
 
 
 <form [formGroup]="premiumForm" (ngSubmit)="onSubmit()">
@@ -36,16 +35,16 @@
     </select>
   </div>
   <div class="form-group">
-    <label for="deathsum">Death Sum</label>
+    <label for="deathsum">Death Sum</label>$
     <input [formGroup]="premiumForm" type="number" class="form-control"
            formControlName="deathsum">
   </div>
   <div class="form-group">
-    <label for="premium">Total Premium : </label>{{premium}}
+    <label for="premium">Premium Amount : </label>${{premium}}
    
   </div>
 
 
 
-  <button class="button" type="submit">Purchase</button>
+  <button class="button" type="submit">Calculate</button>
 </form>

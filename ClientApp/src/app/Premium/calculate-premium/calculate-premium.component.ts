@@ -52,7 +52,7 @@ export class CalculatePremiumComponent implements OnInit {
     }
 
     
-    this.http.post(this.baseUrl + 'premium', this.premiumForm.value).subscribe(result => {
+    this.http.post(this.baseUrl + 'Premium', this.premiumForm.value).subscribe(result => {
       this.premium = result.toString();
       
     }, error => console.error(error));
